@@ -25,7 +25,7 @@ jobs:
           provider: 'github'
           token: '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' # It's your Personal Access Token(PAT)
           repository: ''             # Default is current repository
-          branch: 'main'         # Default is gh-pages for github provider
+          branch: 'gh-pages'         # Default is gh-pages for github provider
           jekyll_src: './'           # Default is root directory
           jekyll_cfg: '_config.yml'  # Default is _config.yml
           jekyll_baseurl: '/jekyll-theme-yat'  # Default is empty
@@ -35,7 +35,5 @@ jobs:
       - name: Generate and move Sitemap
         run: |
           bundle exec jekyll build
-          echo "Generated files:"
-          ls -R _site
           mv _site/sitemap.xml sitemap.xml
         working-directory: ./  # Specify the working directory for this step
